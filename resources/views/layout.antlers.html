@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title ?? site:name }}</title>
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex gap-x-8 items-center justify-center">
+
+            <div class="prose">
+                <h2>Expected</h2>
+                <ul>
+                    <li>home<br>1c9e48b8-d47e-47bd-841e-e817e16202a8</li>
+                    <li>85e5a7a0-6efa-4782-a575-cd7223f7183a<br>99c6f405-e340-470a-b500-ef6c09f29361</li>
+                    <li>c5249174-27b2-4eb7-89bf-e0de6d8fd3a3<br>28fb0495-f066-4d88-bee6-3934488111ca</li>
+                </ul>
+            </div>
+
+            <div class="prose">
+                <h2>Actual</h2>
+                <ul>
+                    {{ nav:main select="title|url|id" }}
+                    <li>{{ looper }}<br>{{ id }}</li>
+                    {{ /nav:main }}
+                </ul>
+            </div>
+
+        </div>
+    </body>
+</html>
